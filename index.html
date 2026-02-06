@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>Happy Birthday</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+  <style>
+    body {
+      margin: 0;
+      min-height: 100svh;
+      background: linear-gradient(
+        135deg,
+        #ff00cc,
+        #ff99ff,
+        #66ffff,
+        #ffcc00
+      );
+      background-size: 600% 600%;
+      animation: bgMove 6s linear infinite;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family:
+        "Comic Sans MS",
+        "Arial Rounded MT Bold",
+        "Hiragino Maru Gothic ProN",
+        "Meiryo",
+        sans-serif;
+      padding: 12px;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+
+    @keyframes bgMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* marquee（平成の魂） */
+    marquee {
+      position: fixed;
+      top: 6px;
+      left: 0;
+      width: 100%;
+      font-size: 18px;
+      color: #ff00cc;
+      text-shadow: 1px 1px #ffffff;
+      z-index: 5;
+    }
+
+    /* タップ前 */
+    .tap-screen {
+      color: #fff;
+      font-size: clamp(1.2rem, 5vw, 1.5rem);
+      text-align: center;
+      cursor: pointer;
+      padding: 30px 20px;
+      animation: blink 1.2s infinite;
+      text-shadow:
+        2px 2px 0 #ff00cc,
+        -2px -2px 0 #00ffff,
+        2px -2px 0 #ffff00;
+      z-index: 4;
+    }
+
+    @keyframes blink {
+      0%,100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    /* メッセージカード */
+    .card {
+      display: none;
+      background: rgba(255,255,255,0.95);
+      width: 92vw;
+      max-width: 420px;
+      max-height: 85svh;
+      padding: 26px 20px;
+      border-radius: 18px;
+      border: 4px solid #ff69b4;
+      box-shadow:
+        0 0 10px #ff00cc,
+        0 0 20px #00ffff;
+      text-align: center;
+      animation: pop 0.8s ease forwards;
+      overflow-y: auto;
+      z-index: 4;
+    }
+
+    @keyframes pop {
+      from {
+        transform: scale(0.8) rotate(-3deg);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1) rotate(0);
+        opacity: 1;
+      }
+    }
+
+    p {
+      font-size: clamp(0.95rem, 4vw, 1.05rem);
+      line-height: 1.9;
+      margin: 0;
+      color: #ff1493;
+      text-shadow:
+        1px 1px #ffffff,
+        2px 2px #ffccff;
+    }
+
+    .from {
+      margin-top: 18px;
+      text-align: right;
+      font-weight: bold;
+      color: #ff00cc;
+      text-shadow:
+        1px 1px #ffffff,
+        2px 2px #00ffff;
+    }
+
+    /* キラキラ常駐 */
+    .sparkle {
+      position: fixed;
+      font-size: 22px;
+      animation: twinkle 1.5s infinite alternate;
+      z-index: 2;
+      opacity: 0.8;
+      pointer-events: none;
+    }
+
+    @keyframes twinkle {
+      from { transform: scale(0.8); opacity: 0.4; }
+      to   { transform: scale(1.2); opacity: 1; }
+    }
+
+    /* コンフェッティ */
+    .confetti {
+      position: fixed;
+      top: -10px;
+      font-size: 20px;
+      animation: fall 3s linear forwards;
+      z-index: 3;
+      pointer-events: none;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 0;
+      }
+    }
+
+    /* アクセスカウンター */
+    .counter {
+      position: fixed;
+      bottom: 8px;
+      right: 8px;
+      font-size: 12px;
+      color: #ff00cc;
+      text-shadow: 1px 1px #ffffff;
+      z-index: 5;
+    }
+  </style>
+</head>
+
+<body>
+
+  <marquee behavior="alternate" scrollamount="6">
+    💖✨💖✨💖 HAPPY BIRTHDAY 💖✨💖✨💖
+  </marquee>
+
+  <!-- タップ前 -->
+  <div class="tap-screen" id="tap">
+    🎀✨🎉<br>
+    タップしてメッセージを開く<br>
+    🎉✨🎀
+  </div>
+
+  <!-- メッセージ -->
+  <div class="card" id="card">
+    <p>
+      はづきさん！<br>
+      お誕生日おめでとうございます！<br>
+      素敵な一年になりますように。<br>
+      今年も素敵な一年になりますように！<br>
+      らぶり―らぶりー<br><br>
+
+      結婚式ですが、お友達の韓国人がこれなくなったので、<br>
+      翌日フリーです。一緒に遊びましょうねーんッ♡<br><br>
+
+      私の誕プレのテーマは≪旅のQOL爆上がり≫です。<br>
+      なので今年は、最近リニューアルした<br>
+      AirTagです。<br>
+      受託手荷物に入れて、防げ！ロスバゲ！！<br>
+      でございます。
+    </p>
+    <div class="from">from まこ</div>
+  </div>
+
+  <!-- 常駐キラキラ -->
+  <div class="sparkle" style="top: 12px; right: 10px;">✨</div>
+  <div class="sparkle" style="bottom: 18px; left: 10px;">✧</div>
+
+  <div class="counter" id="counter"></div>
+
+  <script>
+    const tap = document.getElementById("tap");
+    const card = document.getElementById("card");
+
+    tap.addEventListener("click", () => {
+      tap.style.display = "none";
+      card.style.display = "block";
+      launchConfetti();
+    });
+
+    function launchConfetti() {
+      const emojis = ["🎉","✨","💖","🌈","★","♥","✧"];
+      for (let i = 0; i < 90; i++) {
+        const c = document.createElement("div");
+        c.className = "confetti";
+        c.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+        c.style.left = Math.random() * 100 + "vw";
+        c.style.animationDelay = Math.random() * 0.5 + "s";
+        document.body.appendChild(c);
+        setTimeout(() => c.remove(), 3000);
+      }
+    }
+
+    const count = Math.floor(Math.random() * 900) + 100;
+    document.getElementById("counter").textContent =
+      `あなたは ${count} 人目のお客様です♡`;
+  </script>
+
+</body>
+</html>
