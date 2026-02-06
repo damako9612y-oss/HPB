@@ -38,7 +38,6 @@
       100% { background-position: 0% 50%; }
     }
 
-    /* marquee（平成の魂） */
     marquee {
       position: fixed;
       top: 6px;
@@ -50,7 +49,6 @@
       z-index: 5;
     }
 
-    /* タップ前 */
     .tap-screen {
       color: #fff;
       font-size: clamp(1.2rem, 5vw, 1.5rem);
@@ -70,7 +68,6 @@
       50% { opacity: 0.4; }
     }
 
-    /* メッセージカード */
     .card {
       display: none;
       background: rgba(255,255,255,0.95);
@@ -110,6 +107,12 @@
         2px 2px #ffccff;
     }
 
+    /* ★ 改行完全制御 */
+    .line {
+      display: inline-block;
+      white-space: nowrap;
+    }
+
     .from {
       margin-top: 18px;
       text-align: right;
@@ -120,7 +123,6 @@
         2px 2px #00ffff;
     }
 
-    /* キラキラ常駐 */
     .sparkle {
       position: fixed;
       font-size: 22px;
@@ -135,7 +137,6 @@
       to   { transform: scale(1.2); opacity: 1; }
     }
 
-    /* コンフェッティ */
     .confetti {
       position: fixed;
       top: -10px;
@@ -152,7 +153,6 @@
       }
     }
 
-    /* アクセスカウンター */
     .counter {
       position: fixed;
       bottom: 8px;
@@ -171,35 +171,35 @@
     💖✨💖✨💖 HAPPY BIRTHDAY 💖✨💖✨💖
   </marquee>
 
-  <!-- タップ前 -->
   <div class="tap-screen" id="tap">
     🎀✨🎉<br>
     タップしてメッセージを開く<br>
     🎉✨🎀
   </div>
 
-  <!-- メッセージ -->
   <div class="card" id="card">
     <p>
-      はづきさん！<br>
-      お誕生日おめでとうございます！<br>
-      素敵な一年になりますように。<br>
-      今年も素敵な一年になりますように！<br>
-      らぶり―らぶりー<br><br>
+      <span class="line">はづきさん！</span><br>
+      <span class="line">お誕生日おめでとうございます！</span><br>
+      <span class="line">素敵な一年になりますように。</span><br>
+      <span class="line">今年も素敵な一年になりますように！</span><br>
+      <span class="line">らぶり―らぶりー</span><br><br>
 
-      結婚式ですが、お友達の韓国人がこれなくなったので、<br>
-      翌日フリーです。一緒に遊びましょうねーんッ♡<br><br>
+      <span class="line">結婚式ですが、</span><br>
+      <span class="line">お友達の韓国人がこれなくなったので、</span><br>
+      <span class="line">翌日フリーです。</span><br>
+      <span class="line">一緒に遊びましょうねーんッ♡</span><br><br>
 
-      私の誕プレのテーマは≪旅のQOL爆上がり≫です。<br>
-      なので今年は、最近リニューアルした<br>
-      AirTagです。<br>
-      受託手荷物に入れて、防げ！ロスバゲ！！<br>
-      でございます。
+      <span class="line">私の誕プレのテーマは</span><br>
+      <span class="line">≪旅のQOL爆上がり≫です。</span><br>
+      <span class="line">なので今年は、最近リニューアルした</span><br>
+      <span class="line">AirTagです。</span><br>
+      <span class="line">受託手荷物に入れて、防げ！ロスバゲ！！</span><br>
+      <span class="line">でございます。</span>
     </p>
     <div class="from">from まこ</div>
   </div>
 
-  <!-- 常駐キラキラ -->
   <div class="sparkle" style="top: 12px; right: 10px;">✨</div>
   <div class="sparkle" style="bottom: 18px; left: 10px;">✧</div>
 
